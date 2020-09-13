@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap"
+      rel="stylesheet"
+    />
+    <title>認証画面</title>
+    <!-- <link rel="stylesheet" href="milligram.min.css" /> -->
+    <style>
+      body {
+        font-family: "Lexend Peta", sans-serif;
+        color:#8484b6 ;
+      }
+      .header-title {
+        padding: 10px;
+        margin-bottom: 100px;
+        font-size: 18px;
+        border-bottom: 1px solid #aaa;
+      }
+      .hide {
+        display: none;
+      }
+      #info {
+        text-align: center;
+        font-size: 4em;
+        font-weight: bold;
+      }
+      input {
+        height: 25px;
+        width: 190px;
+        margin-bottom: 15px;
+      }
+      button {
+        height: 30px;
+        width: 190px;
+        font-family: "Lexend Peta", sans-serif;
+      }
+
+      /* ログインボタン */
+      button#login {
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        transition: background .3s;
+        width: 90px;
+        border: none;
+        background-color: #8484b6;
+        color:whitesmoke;
+      }
+      button#login:hover {
+        background: #ff0033;
+      }
+
+      /* 新規ボタン */
+      button#newuser {
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        transition: background .3s;
+        width: 90px;
+        border: none;
+        background-color: #8484b6;
+        color:whitesmoke;
+      }
+      button#newuser:hover {
+        background: #003399;
+      }
+
+      #email {
+        margin-top: 20px;
+      }
+      body {
+       background-image: url("img/Login.png"); /* 画像 */
+       background-size: cover;               /* 全画面 */
+       background-attachment: fixed;         /* 固定 */
+       background-position: center center;   /* 縦横中央 */
+    }
+    .container {
+      text-align: center;
+    }
+    button.sc-kDgGX.gXOwEf {
+      background-color:#87cefa;
+      border: none;
+    }
+    button.sc-kDgGX.eTGdbP {
+      background-color:whitesmoke;
+      border: none;
+    }
+
+    </style>
+  </head>
+  <body>
+    
+    <h1 class="header-title">saketabi</h1>
+
+    <div class="container">
+      <div id="input-area">
+        <div class="sc-gYtlsd dnlphT sc-hqGPoI gqbgyo"><button class="sc-kDgGX gXOwEf" type="button"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNiAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMjE1OTggMTMuMDk2MUMxMC44NzQgMTMuMDk2MSAxMy45NyA4LjQwNDA1IDEzLjk3IDQuMzQyMDVDMTMuOTcgNC4yMTAwNSAxMy45NyA0LjA3ODA1IDEzLjk2NCAzLjk0NjA1QzE0LjU2NCAzLjUxNDA1IDE1LjA4NiAyLjk2ODA1IDE1LjUgMi4zNTAwNUMxNC45NDggMi41OTYwNSAxNC4zNTQgMi43NTgwNSAxMy43MyAyLjgzNjA1QzE0LjM2NiAyLjQ1ODA1IDE0Ljg1MiAxLjg1MjA1IDE1LjA4NiAxLjEzMjA1QzE0LjQ5MiAxLjQ4NjA1IDEzLjgzMiAxLjczODA1IDEzLjEzIDEuODc2MDVDMTIuNTY2IDEuMjc2MDUgMTEuNzY4IDAuOTA0MDUzIDEwLjg4NiAwLjkwNDA1M0M5LjE4Nzk4IDAuOTA0MDUzIDcuODA3OTggMi4yODQwNSA3LjgwNzk4IDMuOTgyMDVDNy44MDc5OCA0LjIyMjA1IDcuODM3OTggNC40NTYwNSA3Ljg4NTk4IDQuNjg0MDVDNS4zMjk5OCA0LjU1ODA1IDMuMDYxOTggMy4zMjgwNSAxLjU0Mzk4IDEuNDY4MDVDMS4yNzk5OCAxLjkyNDA1IDEuMTI5OTggMi40NTIwNSAxLjEyOTk4IDMuMDE2MDVDMS4xMjk5OCA0LjA4NDA1IDEuNjc1OTggNS4wMjYwNSAyLjQ5Nzk4IDUuNTc4MDVDMS45OTM5OCA1LjU2MDA1IDEuNTE5OTggNS40MjIwNSAxLjEwNTk4IDUuMTk0MDVDMS4xMDU5OCA1LjIwNjA1IDEuMTA1OTggNS4yMTgwNSAxLjEwNTk4IDUuMjM2MDVDMS4xMDU5OCA2LjcyNDA1IDIuMTY3OTggNy45NzIwNSAzLjU3MTk4IDguMjU0MDVDMy4zMTM5OCA4LjMyNjA1IDMuMDQzOTggOC4zNjIwNSAyLjc2MTk4IDguMzYyMDVDMi41NjM5OCA4LjM2MjA1IDIuMzcxOTggOC4zNDQwNSAyLjE4NTk4IDguMzA4MDVDMi41NzU5OCA5LjUzMjA1IDMuNzE1OTggMTAuNDIwMSA1LjA1OTk4IDEwLjQ0NDFDNC4wMDM5OCAxMS4yNzIxIDIuNjc3OTggMTEuNzY0MSAxLjIzNzk4IDExLjc2NDFDMC45OTE5ODIgMTEuNzY0MSAwLjc0NTk4MSAxMS43NTIxIDAuNTA1OTgxIDExLjcyMjFDMS44NjE5OCAxMi41ODYxIDMuNDgxOTggMTMuMDk2MSA1LjIxNTk4IDEzLjA5NjFaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="icon_twitter"> twitter でログイン</button>
+        </div><br />
+        <div class="sc-gYtlsd dnlphT sc-hqGPoI gqbgyo"><button class="sc-kDgGX eTGdbP" type="button"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuNTQ2MDEgOS42Njg5NUwyLjk4OTAxIDExLjc0ODlMMC45NTMwMTQgMTEuNzkwOUMwLjMyNTM0MyAxMC42MjYxIC0wLjAwMjE4OTA5IDkuMzIzMTYgMS4zODI1NWUtMDUgNy45OTk5NUMtMC4wMDIzNzI5NSA2LjcxOTIyIDAuMzA0MzA2IDUuNDU2ODMgMC44OTQwMTQgNC4zMTk5NUwyLjcwNzAxIDQuNjUyOTVMMy41MDEwMSA2LjQ1NDk1QzMuMTQyNDggNy40OTkwMiAzLjE1ODM5IDguNjM1MzIgMy41NDYwMSA5LjY2ODk1WiIgZmlsbD0iI0ZCQkIwMCIvPgo8cGF0aCBkPSJNMTUuODYgNi41MDVDMTYuMDU5IDcuNTUxODMgMTYuMDQ3MSA4LjYyNzg0IDE1LjgyNSA5LjY3QzE1LjQ0MDQgMTEuNDcyIDE0LjQ0NTMgMTMuMDg2IDEzLjAwOCAxNC4yMzlMMTAuNzI1IDE0LjEyMkwxMC40MDIgMTIuMTA1QzExLjM0NDkgMTEuNTUyNSAxMi4wNjkzIDEwLjY5MjggMTIuNDU0IDkuNjdIOC4xNzYwM1Y2LjUwNUgxNS44NloiIGZpbGw9IiM1MThFRjgiLz4KPHBhdGggZD0iTTEzLjAwOCAxNC4yMzhDMTEuNTg5MiAxNS4zODA3IDkuODIxNyAxNi4wMDI2IDggMTZDNi41NTQ3MSAxNi4wMDA2IDUuMTM2MjggMTUuNjA5NSAzLjg5NTQ2IDE0Ljg2ODRDMi42NTQ2NCAxNC4xMjczIDEuNjM3OCAxMy4wNjM4IDAuOTUzMDAzIDExLjc5MUwzLjU0NiA5LjY3MDA0QzMuNzg5MzIgMTAuMzE5IDQuMTcxNDggMTAuOTA2OSA0LjY2NTc2IDExLjM5MjdDNS4xNjAwNCAxMS44Nzg0IDUuNzU0NDkgMTIuMjUwMyA2LjQwNzUyIDEyLjQ4MjRDNy4wNjA1NiAxMi43MTQ0IDcuNzU2NCAxMi44MDA5IDguNDQ2MzggMTIuNzM1OUM5LjEzNjM1IDEyLjY3MDkgOS44MDM3OSAxMi40NTYgMTAuNDAyIDEyLjEwNkwxMy4wMDggMTQuMjM5VjE0LjIzOFoiIGZpbGw9IiMyOEI0NDYiLz4KPHBhdGggZD0iTTEzLjEwNiAxLjg0MkwxMC41MTUgMy45NjNDOS45MDc4MiAzLjU4NDc2IDkuMjIzMTUgMy4zNDgzMSA4LjUxMTk0IDMuMjcxMjRDNy44MDA3MyAzLjE5NDE2IDcuMDgxMyAzLjI3ODQ1IDYuNDA3MTcgMy41MTc4M0M1LjczMzA0IDMuNzU3MjEgNS4xMjE1NiA0LjE0NTUyIDQuNjE4MjQgNC42NTM4N0M0LjExNDkxIDUuMTYyMjIgMy43MzI2OSA1Ljc3NzUyIDMuNTAwMDIgNi40NTRMMC44OTUwMiA0LjMyMkMxLjU2OTE1IDMuMDE5MzcgMi41ODg1MSAxLjkyNzIgMy44NDE2MSAxLjE2NDkzQzUuMDk0NzEgMC40MDI2NjcgNi41MzMyOSAtMC4wMDAzMzUzMTkgOC4wMDAwMiAyLjA5MzQyZS0wN0M5Ljk0MTAyIDIuMDkzNDJlLTA3IDExLjcyIDAuNjkxIDEzLjEwNiAxLjg0MloiIGZpbGw9IiNGMTQzMzYiLz4KPC9zdmc+Cg==" alt="icon_google"> Google でログイン</button></div><br />
+        ------ or ------<br />
+        <input
+          id="email"
+          type="email"
+          placeholder="メールアドレスを入力"
+          required/><br />
+        <input
+          id="password"
+          type="password"
+          placeholder="パスワードを入力"
+          required
+        /><br />
+
+        <button id="login">ログイン</button>
+        <button id="newuser">新規登録</button>
+      </div>
+      <button id="logout" class="hide">ログアウト</button>
+    </div>
+    
+
+    <!-- テキスト表示用 -->
+    <p id="info"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script> -->
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

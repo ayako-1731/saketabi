@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+
+    <!-- <script type="text/javascript" src="js/popbox.js"></script>
+    <script type="text/javascript">
+    popBoxWaitImage.src = "images/spinner40.gif";
+    popBoxRevertImage = "images/magminus.gif";
+    popBoxPopImage = "images/magplus.gif";
+    </script> -->
+    
+    <title>コレクション画面</title>
+    <style>
+      body {
+        margin: 0;
+        background-color:  #B9D6E3;
+        text-align: center;
+      }
+
+      .header-title {
+          text-align: center;
+          color: #1B688B;
+          margin: 0px 0px;
+          font-weight: bold;
+          display: flex;
+          justify-content:space-around;
+      }
+
+      .humberger1 img{
+        display: none;
+        height: 32px;
+        width: 32px;
+      }
+
+      .image img {
+        height: 70px;
+        width: 200px;
+        object-fit: contain;
+        margin-top: 10px; 
+        margin-left: 20px;
+      }
+ 
+      .humberger img {
+        height: 32px;
+        width: 32px;
+        margin-top: 10px;
+      }
+
+      /*　ハンバーガーボタン */
+      .hamburger {
+        display : block;
+        position: fixed;
+        z-index : 3;
+        right : 16px;
+        top   : 16px;
+        width : 42px;
+        height: 42px;
+        cursor: pointer;
+        text-align: center;
+      }
+      .hamburger span {
+        display : block;
+        position: absolute;
+        width   : 30px;
+        height  : 2px ;
+        left    : 6px;
+        background : #555;
+        -webkit-transition: 0.5s all;
+        -moz-transition   : 0.5s all;
+        transition        : 0.5s all;
+      }
+      .hamburger span:nth-child(1) {
+        top: 10px;
+      }
+      .hamburger span:nth-child(2) {
+        top: 20px;
+      }
+      .hamburger span:nth-child(3) {
+        top: 30px;
+      }
+
+      /* ナビ開いてる時のボタン */
+
+      .hamburger.active span:nth-child(1) {
+        top : 16px;
+        left: 6px;
+        width: 24px;
+          background : #fff;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform   : rotate(-45deg);
+        transform        : rotate(-45deg);
+      }
+      .hamburger.active span:nth-child(2) {
+        left: 60%;
+        opacity: 0;
+        -webkit-animation: active-btn17-bar02 .8s forwards;
+        animation: active-hamburger-bar02 .8s forwards;
+      }
+      @-webkit-keyframes active-hamburger-bar02 {
+        100% {
+          height: 0;
+        }
+      }
+      @keyframes active-hamburger-bar02 {
+        100% {
+          height: 0;
+        }
+      }
+      .hamburger.active span:nth-child(3) {
+        top: 16px;
+        width: 24px;
+        background : #fff;
+        -webkit-transform: rotate(45deg);
+        -moz-transform   : rotate(45deg);
+        transform        : rotate(45deg);
+      }
+
+
+      .hamburger::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        content: '';
+        width: 52px;
+        height: 52px;
+        margin: -32px 0 0 -32px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 0, 0, 0);
+        transition: all .75s;
+      }
+      .hamburger.active::after {
+        border: 2px solid #fff;
+      }
+
+      nav.globalMenuSp {
+        position: fixed;
+        z-index : 2;
+        top  : 0;
+        left : 0;
+        color: #fff;
+        background: rgba(0,0,0,0.7);
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .6s ease, visibility .6s ease;
+      }
+
+      nav.globalMenuSp ul {
+        margin: 0 auto;
+        padding: 0;
+        width: 100%;
+      }
+
+      nav.globalMenuSp ul li {
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+        transition: .4s all;
+      }
+      nav.globalMenuSp ul li:last-child {
+        padding-bottom: 0;
+      }
+      nav.globalMenuSp ul li:hover{
+        background :#ddd;
+      }
+
+      nav.globalMenuSp ul li a {
+        display: block;
+        color: #fff;
+        padding: 1em 0;
+        text-decoration :none;
+      }
+
+      /* このクラスを、jQueryで付与・削除する */
+      nav.globalMenuSp.active {
+        opacity: 100;
+
+      }
+
+      h1 {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        color: #1B688B;
+      }
+
+      .icons {
+        border-top: 1px solid #aaa;
+        background-color: none;
+        padding: 2.5% 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        /* margin-top: 60px; */
+      }
+
+      /* .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      
+      .container > * {
+        flex: 1 1 30%;
+        margin-right: 20px;
+      }
+
+      .container > :nth-child(3n+3){
+        margin-right: 0;
+      } */
+
+      #gallery {
+        overflow: hidden;
+      }
+
+      ul {
+        float: left;
+        margin: 8px 0 8px 8px;
+        /* border: 1px solid #ccc; */
+        padding: 8px;
+        width: 370px;
+      }
+      
+      /* #gallery ul li:nth-child(3n) {
+        margin-right:0;
+      } */
+
+      #gallery ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #gallery ul li {
+        width: 110px;
+        margin: 0 10px 10px 0;
+        padding: 10px 0;
+        border: solid 1px #ccc;
+        float: left;
+        text-align: center;
+        color: #b7a077;
+        font-weight: bold;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1)
+      }
+
+      .camera_area {
+        width: auto;
+        display: block;
+	      transition-duration: 0.3s;
+      }
+
+      .camera_area :hover {
+        transform: scale(1.2);	/*画像の拡大率*/
+        transition-duration: 0.3s;	/*変化に掛かる時間*/
+      }
+
+      .camera {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        background-color: #E3C55C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .camera img {
+        opacity: 0.4; 
+      }
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="header-title">
+      <h1>My label collection</h1>
+     
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <nav class="globalMenuSp">
+          <ul>
+              <li><a href="#">Interesting</a></li>
+              <li><a href="#">Fashionable</a></li>
+              <li><a href="#">Limted lavel</a></li>
+              <li><a href="#">Traditional</a></li>
+              <li><a href="#">Cool</a></li>
+              <li><a href="#">Cute</a></li>
+          </ul>
+      </nav>
+      <!-- <div class="humberger">
+        <img src="img/menuicon.svg" width="16" height="16">
+      </div> -->
+    </div>
+
+    <div id="wrap">
+      
+      </div>
+
+    <div class="camera_area">
+      <div class="camera">
+        <img src="img/whitecamera.svg" width="60" height="60">
+      </div>
+    </div>
+
+    <div class="icons">
+       <img src="img/kuraicon.svg" width="32" height="32">
+       <img src="img/saerch.svg" width="32" height="32">
+       <img src="img/camera.svg" width="32" height="32">
+       <img src="img/heart.svg" width="32" height="32">
+       <img src="img/friendsicon.svg" width="32" height="32">
+    </div>
+
+  </body>
+</html>
