@@ -6,69 +6,69 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-   
-    <title>login画面</title>
-   
+
+    <title>login画面aaaaa</title>
+
     <style>
       body {
-       background-image: url("img/Login.png"); /* 画像 */
-       background-size: cover;               /* 全画面 */
-       background-attachment: fixed;         /* 固定 */
-       background-position: center center;   /* 縦横中央 */
-    }
-    h1 {
-      text-align: left;
-      /* text-align: center; */
-      padding-right: 50px;
-      padding-left: 70px;
-      padding-top: 60px;
-    }
+        background-image: url("img/Login.png"); /* 画像 */
+        background-size: cover; /* 全画面 */
+        background-attachment: fixed; /* 固定 */
+        background-position: center center; /* 縦横中央 */
+      }
+      h1 {
+        text-align: left;
+        /* text-align: center; */
+        padding-right: 50px;
+        padding-left: 70px;
+        padding-top: 60px;
+      }
 
-    button {
-      height: 50px;
-      width: 300px;
-      background-color: #000000;
-      color: whitesmoke;
-      text-align: center;
-      border-radius: 30px;
-      font-size: bold;
-      border: none;
-      cursor: pointer;
-      transition: background .3s;
-    }
+      button {
+        height: 50px;
+        width: 300px;
+        background-color: #000000;
+        color: whitesmoke;
+        text-align: center;
+        border-radius: 30px;
+        font-size: bold;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
 
-    button.twitter:hover {
+      button.twitter:hover {
         background: #085679;
         font-size: bold;
-    }
+      }
 
-    button.google:hover {
+      button.google:hover {
         margin-bottom: 10px;
-        background: #E3C55C;
+        background: #e3c55c;
         color: #000000;
         font-size: bold;
-    }
+      }
 
-    input {
-      margin-bottom: 10px;
-      height: 30px;
-      width: 300px;
-      opacity: 80%;
-    }
+      input {
+        margin-bottom: 10px;
+        height: 30px;
+        width: 300px;
+        opacity: 80%;
+      }
 
-    /* ログインボタン */
-    button#login {
+      /* ログインボタン */
+      button#login {
         border-radius: 30px;
         /* box-shadow: 0 2px 4px rgba(0, 0, 0, .1); */
         cursor: pointer;
-        transition: background .3s;
+        transition: background 0.3s;
         width: 150px;
         border: none;
         background-color: whitesmoke;
-        color:#000000;
+        color: #000000;
       }
       button#login:hover {
-        background: #B9D6E3;
+        background: #b9d6e3;
       }
 
       /* 新規ボタン */
@@ -76,79 +76,78 @@
         border-radius: 30px;
         /* box-shadow: 0 2px 4px rgba(0, 0, 0, .1); */
         cursor: pointer;
-        transition: background .3s;
+        transition: background 0.3s;
         width: 150px;
         border: none;
         background-color: whitesmoke;
-        color:#000000;
+        color: #000000;
       }
       button#newuser:hover {
-        background: #B9D6E3;
+        background: #b9d6e3;
       }
 
-    .icon {
-      text-align: center;
-    }
-    .twitter {
-      margin-bottom: 10px;
-    }
-    .or {
-      margin:20px 0;
-    }
+      .icon {
+        text-align: center;
+      }
+      .twitter {
+        margin-bottom: 10px;
+      }
+      .or {
+        margin: 20px 0;
+      }
 
-    img {
-      background-color: whitesmoke;
-    }
+      img {
+        background-color: whitesmoke;
+      }
 
-    #mask {
-      opacity:0.7; background-color:#1B688B;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      z-index: 1;
-    }
-    #mask.hidden {
-      display: none;
-    }
+      #mask {
+        opacity: 0.7;
+        background-color: #1b688b;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 1;
+      }
+      #mask.hidden {
+        display: none;
+      }
 
-    #modal.hidden {
-      transform: translate(0, -500px);
-    }
+      #modal.hidden {
+        transform: translate(0, -500px);
+      }
 
-    #modal {
-      background: #E3C55C;
-      width: 300px;
-      padding: 20px;
-      border-radius: 4px;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      transition: transform 0.4s;
-      z-index: 2;
-    }
-    
-
+      #modal {
+        background: #e3c55c;
+        width: 300px;
+        padding: 20px;
+        border-radius: 4px;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: transform 0.4s;
+        z-index: 2;
+      }
     </style>
   </head>
   <body>
     <div class="title">
-      <h1>あなたの<br>好きなお酒で<br>コレクションの<br>旅に出よう</h1>
+      <h1>あなたの<br />好きなお酒で<br />コレクションの<br />旅に出よう</h1>
     </div>
     <div class="icon">
-      <button class="twitter" alt="icon_twitter">twitterでログイン</button><br>
+      <button class="twitter" alt="icon_twitter">twitterでログイン</button
+      ><br />
       <button class="google" alt="icon_google">googleでログイン</button><br />
-      <div class="or">
-        --------- or ---------<br />
-      </div>
+      <div class="or">--------- or ---------<br /></div>
       <input
         id="email"
         type="email"
         placeholder="メールアドレスを入力"
-        required/><br />
+        required
+      /><br />
       <input
         id="password"
         type="password"
@@ -161,16 +160,13 @@
     </div>
     <div id="mask" class="hidden"></div>
     <section id="modal" class="hidden">
-      <input
-        id="name"
-        type="name"
-        placeholder="氏名を入力"
-        required/><br />
+      <input id="name" type="name" placeholder="氏名を入力" required /><br />
       <input
         id="email"
         type="email"
         placeholder="メールアドレスを入力"
-        required/><br />
+        required
+      /><br />
       <input
         id="password"
         type="password"
@@ -180,6 +176,6 @@
 
       <button id="newuser">登録</button><button id="login">キャンセル</button>
     </section>
-   <script src="js/login.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
