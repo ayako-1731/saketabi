@@ -1,38 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+ <html lang="ja">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+     <title>label collection</title>
+     <!-- <link rel="stylesheet" href="style.css"> -->
+ 
+     <link rel="stylesheet" href="css/grid-gallery.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
+     <style>
+       body {
+         text-align: center;
+         /* background-color:  #B9D6E3; */
+       }
+       h2 {
+        font-family: 'Cherry Swash', cursive;
+        color: #1B688B;
+        margin: 0px;
+       }
 
-    <!-- <script type="text/javascript" src="js/popbox.js"></script>
-    <script type="text/javascript">
-    popBoxWaitImage.src = "images/spinner40.gif";
-    popBoxRevertImage = "images/magminus.gif";
-    popBoxPopImage = "images/magplus.gif";
-    </script> -->
-    
-    <title>コレクション画面</title>
-    <style>
-      body {
-        margin: 0;
-        background-color:  #B9D6E3;
-        text-align: center;
+       .title {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         margin: 10px 0px;
+         border-bottom: gray;
+       }
+
+       .type button{
+        background-color: white;
+        border-radius: 30px;
+        border: 2px solid #b9d6e3;
+        width: 120px;
+        height: 30px;
+        color: #000000; 
+        font-size: 0.5vw;
+        transition-duration: 0.3s;
+        /* margin-bottom: 10px; */
+        /* display: flex;
+        flex-direction: row;
+        justify-content: space-around; */
+      }
+      .type button:hover {
+        background: #b9d6e3;
       }
 
-      .header-title {
-          text-align: center;
-          color: #1B688B;
-          margin: 0px 0px;
-          font-weight: bold;
-          display: flex;
-          justify-content:space-around;
+      .type {
+        margin-bottom: 10px; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; 
       }
 
-      .humberger1 img{
+      .gg-box img {
+        border: solid 1px gray;
+      }
+
+       .humberger1 img{
         display: none;
         height: 32px;
         width: 32px;
@@ -121,7 +145,6 @@
         transform        : rotate(45deg);
       }
 
-
       .hamburger::after {
         position: absolute;
         top: 50%;
@@ -184,70 +207,8 @@
 
       }
 
-      h1 {
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        color: #1B688B;
-      }
-
-      .icons {
-        border-top: 1px solid #aaa;
-        background-color: none;
-        padding: 2.5% 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        /* margin-top: 60px; */
-      }
-
-      /* .container {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      
-      .container > * {
-        flex: 1 1 30%;
-        margin-right: 20px;
-      }
-
-      .container > :nth-child(3n+3){
-        margin-right: 0;
-      } */
-
-      #gallery {
-        overflow: hidden;
-      }
-
-      ul {
-        float: left;
-        margin: 8px 0 8px 8px;
-        /* border: 1px solid #ccc; */
-        padding: 8px;
-        width: 370px;
-      }
-      
-      /* #gallery ul li:nth-child(3n) {
-        margin-right:0;
-      } */
-
-      #gallery ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      #gallery ul li {
-        width: 110px;
-        margin: 0 10px 10px 0;
-        padding: 10px 0;
-        border: solid 1px #ccc;
-        float: left;
-        text-align: center;
-        color: #b7a077;
-        font-weight: bold;
-        box-shadow: 2px 2px 3px rgba(0,0,0,0.1)
-      }
-
-      .camera_area {
+      /* カメラ */
+       .camera_area {
         width: auto;
         display: block;
 	      transition-duration: 0.3s;
@@ -260,8 +221,8 @@
 
       .camera {
         border-radius: 50%;
-        height: 120px;
-        width: 120px;
+        height: 110px;
+        width: 110px;
         background-color: #E3C55C;
         display: flex;
         justify-content: center;
@@ -274,52 +235,87 @@
         opacity: 0.4; 
       }
 
-    </style>
-  </head>
-  <body>
-    
-    <div class="header-title">
-      <h1>My label collection</h1>
-     
+      /* アイコン設置 */
+      .icons {
+        border-top: 1px solid #aaa;
+        background-color: none;
+        padding: 2.5% 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+     </style>
 
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      
-      <nav class="globalMenuSp">
-          <ul>
-              <li><a href="#">Interesting</a></li>
-              <li><a href="#">Fashionable</a></li>
-              <li><a href="#">Limted lavel</a></li>
-              <li><a href="#">Traditional</a></li>
-              <li><a href="#">Cool</a></li>
-              <li><a href="#">Cute</a></li>
-          </ul>
-      </nav>
-      <!-- <div class="humberger">
-        <img src="img/menuicon.svg" width="16" height="16">
-      </div> -->
-    </div>
-
-    <div id="wrap">
-      
-      </div>
-
-    <div class="camera_area">
-      <div class="camera">
-        <img src="img/whitecamera.svg" width="60" height="60">
-      </div>
-    </div>
-
-    <div class="icons">
-       <img src="img/kuraicon.svg" width="32" height="32">
+ </head>
+ <body>
+    <div class="container">
+ 
+     <div id="gg-screen" hidden> </div>
+     <div class="title">
        <img src="img/saerch.svg" width="32" height="32">
-       <img src="img/camera.svg" width="32" height="32">
-       <img src="img/heart.svg" width="32" height="32">
-       <img src="img/friendsicon.svg" width="32" height="32">
-    </div>
+       <h2>label collection</h2>
+       <img src="img/共有アイコン1.svg" width="32" height="32">
+     </div>
 
-  </body>
-</html>
+         <!-- <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <nav class="globalMenuSp">
+            <ul>
+                <li><a href="#">Interesting</a></li>
+                <li><a href="#">Fashionable</a></li>
+                <li><a href="#">Limted lavel</a></li>
+                <li><a href="#">Traditional</a></li>
+                <li><a href="#">Cool</a></li>
+                <li><a href="#">Cute</a></li>
+                <li><a href="#">log out</a></li>
+            </ul>
+        </nav> -->
+
+        <div class="type">
+          <button>すべて</button>
+          <a href="cool label.html">
+            <button>恰好いい</button>
+          </a>
+          <button>かわいい</button>
+          <button>面白い</button>
+          <button>古典的</button>
+          <button>おしゃれ</button>
+          <button>限定</button>
+        </div>
+
+ 
+         <div class="gg-box">
+             <img src="img/cool.jpg">
+             <img src="img/kawaii.jpg">
+             <img src="img/kawaii2.jpg">
+             <img src="img/ohare.jpg">
+             <img src="img/hanabie.jpg">
+             <img src="img/natugakoi.jpg">
+             <img src="img/niwaugu.jpg">
+             
+         </div>
+    </div>    
+        <!-- <div class="camera_area">
+          <a href="select2.html"><div class="camera">
+           <img src="img/whitecamera.svg" width="50" height="50">
+         </div>
+        </div> -->
+   
+       <!-- <div class="icons">
+          <img src="img/kuraicon.svg" width="32" height="32">
+          <img src="img/saerch.svg" width="32" height="32">
+          <img src="img/camera.svg" width="32" height="32">
+          <img src="img/heart.svg" width="32" height="32">
+          <img src="img/friendsicon.svg" width="32" height="32">
+       </div> -->
+  
+     <script type="text/javascript" src="js/grid-gallery.min.js"> </script>
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/home.js"></script>
+ </body>
+ </html>
+    

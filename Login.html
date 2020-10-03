@@ -10,15 +10,17 @@
     <title>login画面</title>
 
     <style>
+      
       body {
         background-image: url("img/Login.png"); /* 画像 */
         background-size: cover; /* 全画面 */
         background-attachment: fixed; /* 固定 */
         background-position: center center; /* 縦横中央 */
+        text-align: center;
       }
       h1 {
         text-align: left;
-        /* text-align: center; */
+        /* text-align: center; */  
         padding-right: 50px;
         padding-left: 70px;
         padding-top: 60px;
@@ -94,6 +96,7 @@
       }
       .or {
         margin: 20px 0;
+        /* border: none; */
       }
 
       img {
@@ -131,6 +134,13 @@
         transition: transform 0.4s;
         z-index: 2;
       }
+      
+      .password {
+        text-align: center;
+        margin:20px 0;
+        /* font-size: bold; */
+      }
+
     </style>
   </head>
   <body>
@@ -145,6 +155,7 @@
       <input
         id="email"
         type="email"
+
         placeholder="メールアドレスを入力"
         required
       /><br />
@@ -155,9 +166,10 @@
         required
       /><br />
 
-      <button id="login">ログイン</button>
+      <button id="login">ログイン</button></a>
       <button id="newuser">新規登録</button>
     </div>
+    <div class="password">パスワードを忘れた方</div>
     <div id="mask" class="hidden"></div>
     <section id="modal" class="hidden">
       <input id="name" type="name" placeholder="氏名を入力" required /><br />
@@ -176,6 +188,29 @@
 
       <button id="newuser">登録</button><button id="login">キャンセル</button>
     </section>
+   
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-analytics.js"></script>
+
+    <script>
+
+      var firebaseConfig = {
+      apiKey: "AIzaSyAJ_w_b4fhGTudYZHcNREDyeUmsHFAqMlc",
+      authDomain: "saketabi-7d346.firebaseapp.com",
+      databaseURL: "https://saketabi-7d346.firebaseio.com",
+      projectId: "saketabi-7d346",
+      storageBucket: "saketabi-7d346.appspot.com",
+      messagingSenderId: "827090760583",
+      appId: "1:827090760583:web:03c7e22585bdf795b19922",
+      measurementId: "G-310BG6G0R1"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+     
+    </script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script> -->
     <script src="js/login.js"></script>
   </body>
 </html>

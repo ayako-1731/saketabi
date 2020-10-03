@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+ <html lang="ja">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+     <title>shot screen</title>
+    
+     <link rel="stylesheet" href="css/grid-gallery.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
+     <style>
+       body {
+         text-align: center;
+         /* background-color:  #B9D6E3; */
+       }
+       h2 {
+        font-family: 'Cherry Swash', cursive;
+        color: #1B688B;
+        margin: 0px;
+       }
+
+       .title {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-around;
+         margin: 10px 0px;
+       }
+
+       .type button{
+        background-color: white;
+        border-radius: 30px;
+        border: 2px solid #b9d6e3;
+        width: 120px;
+        height: 30px;
+        color: #000000; 
+        font-size: 0.5vw;
+        transition-duration: 0.3s;
+        /* margin-bottom: 10px; */
+        /* display: flex;
+        flex-direction: row;
+        justify-content: space-around; */
+       }
+       .type button:hover {
+        background: #b9d6e3;
+       }
+
+        .type {
+          margin-bottom: 10px; 
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around; 
+        }
+
+        canvas, video{
+        border: 1px solid gray;
+        }
+     </style>
+
+ </head>
+ <body>
+    <div class="container">
+ 
+     <div id="gg-screen" hidden> </div>
+     <div class="title">
+       <img src="img/saerch.svg" width="32" height="32">
+       <h2>label collection</h2>
+       <img src="img/共有アイコン1.svg" width="32" height="32">
+     </div>
+
+     <div class="type">
+        <button>すべて</button>
+        <button>恰好いい</button>
+        <button>かわいい</button>
+        <button>面白い</button>
+        <button>古典的</button>
+        <button>おしゃれ</button>
+        <button>限定</button>
+     </div>
+
+     <video id="camera" width="300" height="200"></video>
+     <canvas id="picture" width="300" height="200"></canvas>
+     <form>
+       <button type="button" id="shutter">決定</button>
+     </form>
+     
+     <audio id="se" preload="auto">
+       <source src="camera-shutter1.mp3" type="audio/mp3">
+     </audio>
+     
+     <script>
+     window.onload = () => {
+       const video  = document.querySelector("#camera");
+       const canvas = document.querySelector("#picture");
+       const se     = document.querySelector('#se');
+     
+       /** カメラ設定 */
+       const constraints = {
+         audio: false,
+         video: {
+           width: 300,
+           height: 200,
+            facingMode: "user"   // フロントカメラを利用する
+          //  facingMode: { exact: "environment" }  // リアカメラを利用する場合
+         }
+       };
+     
+       /**
+        * カメラを<video>と同期
+        */
+       navigator.mediaDevices.getUserMedia(constraints)
+       .then( (stream) => {
+         video.srcObject = stream;
+         video.onloadedmetadata = (e) => {
+           video.play();
+         };
+       })
+       .catch( (err) => {
+         console.log(err.name + ": " + err.message);
+       });
+     
+       /**
+        * シャッターボタン
+        */
+        document.querySelector("#shutter").addEventListener("click", () => {
+         const ctx = canvas.getContext("2d");
+     
+         // 演出的な目的で一度映像を止めてSEを再生する
+         video.pause();  // 映像を停止
+         se.play();      // シャッター音
+         setTimeout( () => {
+           video.play();    // 0.5秒後にカメラ再開
+         }, 500);
+     
+         // canvasに画像を貼り付ける
+         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+       });
+     };
+     </script>  
+ </body>
+</html>
+    

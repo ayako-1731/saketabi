@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap"
+      rel="stylesheet"
+    />
+    <title>表示登録画面</title>
+ 
+    <style>
+      h2 {
+        text-align: center;
+        font-family: 'Cherry Swash', cursive;
+        color: #1B688B;
+        margin-bottom: 0px;
+      }
+
+      body {
+       background-image: url(); /* 画像 */
+       background-size: cover;               /* 全画面 */
+       background-attachment: fixed;         /* 固定 */
+       background-position: center center;   /* 縦横中央 */
+       text-align: center;
+       margin: 0px 0px;
+      }
+      .container {
+        text-align: center;
+      }
+
+    input {
+      height: 25px;
+      width: 286px;
+    }
+
+    button {
+      border-radius: 10px;
+      margin-bottom: 5px;
+      border:none;
+      height: 30px;
+      color: whitesmoke;
+    }
+
+    .type button{
+      background-color: white;
+      border-radius: 30px;
+      border: 2px solid #b9d6e3;
+      width: 120px;
+      height: 35px;
+      font-size: 100%;
+      color: #000000; 
+      /* font-weight: bold;  */
+      transition-duration: 0.3s;
+    }
+     .type button:hover {
+       background: #b9d6e3;
+    }
+
+    .tag button {
+      background-color:white;
+      border-radius: 30px;
+      border: 2px solid  #e3c55c;
+      width: 120px;
+      height: 35px;
+      font-size: 100%;
+      color: #000000; 
+      /* font-weight: bold; */
+    }
+    .tag button:hover {
+      background: #e3c55c;
+    }
+
+    .registration button {
+      background-color: #1b688b;
+      border-radius: 30px;
+      height: 35px;
+      width: 120px;
+    }
+
+    .registration {
+      margin-bottom: 15px;
+    }
+
+    /* button#confirmation {
+      height: 35px;
+      width: 120px;
+    } */
+
+    .name {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .type {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .tag {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .comment {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .icons {
+      margin-bottom: 30px;
+      font-weight: bold;
+      
+    }
+    button {
+      background-color: white;
+    }
+
+    #mask {
+      opacity: 0.7;
+      background-color: #1b688b;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+   }
+      #mask.hidden {
+        display: none;
+      }
+
+      #modal.hidden {
+        transform: translate(0, -500px);
+      }
+
+      #modal {
+        background: #e3c55c;
+        width: 300px;
+        padding: 20px;
+        border-radius: 4px;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        transition: transform 0.4s;
+        z-index: 2;
+      }
+
+      .icon {
+        border-top: 1px solid #aaa;
+        background-color: none;
+        padding: 2.5% 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: white;
+      }
+
+      
+
+    </style>
+  </head>
+  <body>
+
+    <h2>Select Categories</h2>
+    <div class="name">名称<br>
+      <input type="text"></input>
+    </div>
+    
+    <div class="type">タイプ<br>
+      <button>純米大吟醸</button>
+      <button>純米吟醸</button>
+      <button>特別純米</button>
+      <button>純米酒</button></br>
+      <button>大吟醸酒</button>
+      <button>吟醸酒</button>
+      <button>特別本醸造酒</button>
+      <button>本醸造酒</button>
+    </div>
+
+    <div class="tag">フレーバー<br>
+      <button>旨味</button>
+      <button>濃厚</button>
+      <button>辛口</button>
+      <button>フルーティ</button></br>
+      <button>甘味</button>
+      <button>どっしり</button>
+      <button>酸味</button>
+      <button>スッキリ</button>
+    </div>
+
+    <div class="comment">コメント<br>
+    <textarea placeholder="コメントを記載" cols="50" rows="5" ></textarea>
+    </div>
+
+    <div class="icons">お気に入り<br>
+      <button>
+        <img src="img/heart2.svg" width="20" height="20">
+      </button>
+      <button>
+        <img src="img/heart2.svg" width="20" height="20">
+      </button>
+      <button>
+        <img src="img/heart2.svg" width="20" height="20">
+      </button>
+      <button>
+        <img src="img/heart2.svg" width="20" height="20">
+      </button>
+      <button>
+        <img src="img/heart2.svg" width="20" height="20">
+      </button>
+   </div>
+
+    <div class="registration">
+      <!-- <button id="confirmation">入力確認</button> -->
+      <a href="select.html"><button id="registration">ラベルの選択</button></a>
+    </div>
+
+    <!-- <div class="icon">
+       <img src="img/kuraicon.svg" width="32" height="32">
+       <img src="img/人物の無料素材.svg" width="32" height="32">
+    </div> -->
+
+  </div>
+  </body>
+</html>

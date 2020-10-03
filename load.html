@@ -3,48 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap" rel="stylesheet"> -->
+  
   <title>saketabi</title>
   <style type="text/css">
     body {
-       background-color: #1B688B; /* 画像 */
+       background-color: #1B688B; 
     }
 
     .sake {
       position: absolute;
-      cursor: pointer;
       top: 50%;
       left: 50%;
       -webkit-transform : translate(-50%,-50%);
       transform : translate(-50%,-50%);
       text-align: center;
       background-color: #1B688B;
-      /* -moz-transition: -moz-transform 0.5s linear;
-      -webkit-transition: -webkit-transform 0.5s linear;
-      -o-transition: -o-transform 0.5s linear;
-      -ms-transition: -ms-transform 0.5s linear;
-      transition: transform 0.5s linear; */
     }
-
-    /* button:hover {
-      border-radius: 50%;
-      background: #333399;
-    }  */
-
-    /* .sake:hover {
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      transform: scale(1.2);
-    } */
 
   </style>
 </head>
 <body>
    <div class="sake">
-     <img src="img/rogo.png">
+     <a href="login.html"><img src="img/rogo.png"></a>
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+  <script>bubbly({
+    colorStart: "#1B688B",
+    colorStop: "#1B688B",
+    bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`
+  });</script>
   
+   
 </body>
 </html>

@@ -1,13 +1,13 @@
 // Your web app's Firebase configuration
 var config = {
-  apiKey: "AIzaSyC092lJZUulLArtyUX_BdsTQaxHJCGMR4I",
-  authDomain: "saketabi-8094f.firebaseapp.com",
-  databaseURL: "https://saketabi-8094f.firebaseio.com",
-  projectId: "saketabi-8094f",
-  storageBucket: "saketabi-8094f.appspot.com",
-  messagingSenderId: "631535020573",
-  appId: "1:631535020573:web:a326b73b628516726334f4",
-  measurementId: "G-03P591EPZX",
+  apiKey: "AIzaSyAJ_w_b4fhGTudYZHcNREDyeUmsHFAqMlc",
+  authDomain: "saketabi-7d346.firebaseapp.com",
+  databaseURL: "https://saketabi-7d346.firebaseio.com",
+  projectId: "saketabi-7d346",
+  storageBucket: "saketabi-7d346.appspot.com",
+  messagingSenderId: "827090760583",
+  appId: "1:827090760583:web:03c7e22585bdf795b19922",
+  measurementId: "G-310BG6G0R1",
 };
 // Initialize Firebase
 firebase.initializeApp(config);

@@ -6,42 +6,40 @@
       name="viewport"
       content="width=device-width, initial-scale=1, user-scalable=no"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:700 rel="stylesheet">
+    
 
     <title>home画面</title>
     <style>
-      
-      body {
-       background-image: url(); /* 画像 */
-       background-size: cover;               /* 全画面 */
-       background-attachment: fixed;         /* 固定 */
-       background-position: center;   /* 縦横中央 */
-       margin: 0px 0px;
-      }
-     
       .container {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         display: grid;
         grid-template-columns: 100px 100px 100px;
-        grid-template-rows: 100px 70px 100px 90px 80px;
+        grid-template-rows: 100px 100px 100px 100px 100px;
         cursor: pointer;
-        font-family: 'Yanone Kaffeesatz', sans-serif;
-        font-size: 25px;
+        font-family: 'Cherry Swash', cursive;
+        font-size: 20px;
         overflow: hidden;
       }
-      /* .container:hover {
-        
-      } */
 
-      .header-title {
-          height: 60px;
-          text-align: center;
-          background-color: #085679;
-          color: whitesmoke;
-          margin: 0px 0px;
-          float: none;
+      .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
       }
+     
+     /* .heart {
+       display: hidden;
+     } */
       
+      h2 {
+        text-align: center;
+        font-family: 'Cherry Swash', cursive;
+        color: #1B688B;
+        margin: 0px;
+      }
+
       .icons {
         border-top: 1px solid #aaa;
         background-color: none;
@@ -52,19 +50,6 @@
         /* margin-top: 60px; */
       }
 
-      .header-title img {
-        /* height: 25%; */
-        width: 40%;
-        object-fit: contain; 
-      }
-
-      .image {
-        text-align: center;
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-
       .box1 {
         height: 110px;
         width: 110px;
@@ -72,6 +57,7 @@
         background-color: #E3C55C;
         color: whitesmoke;
         margin-top: 20px;
+        margin-right: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -85,9 +71,11 @@
       }
 
       .box2 {
-        height: 70px;
-        width: 70px;
+        height: 110px;
+        width: 110px;
         border-radius: 50%;
+        margin-right: 30px;
+        margin-top: 10px;
         background-color: #B9D6E3;
         color: whitesmoke;
         display: flex;
@@ -103,12 +91,12 @@
       }
 
       .box3 {
-        height: 120px;
-        width: 120px;
+        height: 110px;
+        width: 110px;
         border-radius: 50%;
         background-color: #1B688B;
         color: whitesmoke;
-        margin-left: 50px;
+        margin-left: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -122,8 +110,8 @@
       }
 
       .box4 {
-        height: 150px;
-        width: 150px;
+        height: 110px;
+        width: 110px;
         border-radius: 50%;
         background-color: #E3C55C;
         color: whitesmoke;
@@ -141,12 +129,12 @@
       }
 
       .box5 {
-        height: 80px;
-        width: 80px;
+        height: 110px;
+        width: 110px;
         border-radius: 50%;
         background-color: #B9D6E3;
         color: whitesmoke;
-        margin-left: 20px;
+        margin-right: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -160,8 +148,8 @@
       }
 
       .box6 {
-        height: 100px;
-        width: 100px;
+        height: 110px;
+        width: 110px;
         border-radius: 50%;
         background-color: #1B688B;
         color: whitesmoke;
@@ -178,43 +166,48 @@
         background-color: #B9D6E3;
       }
 
+      a {
+        border: none;
+      }
+
     </style>
   </head>
   <body>
-    <div class="header-title">
-      <div class="image">
-        <img src="img/tabisake.png">
-      </div>
+    <div class="title">
+      <img src="img/backicon.svg" width="25" height="25">
+      <h2>Select Category</h2>
+      <img src="img/menuicon.svg" type="hidden" width="25" height="25">
     </div>
-
+    
     <div class="container">
-        <div class="box1">Interesting</div>
+        <div class="box1">面白い</div>
         <div class="box1'"></div>
         <div class="box1'"></div>
         <div class="box2'"></div>
-        <div class="box2">Cute</div>
+        <div class="box2">かわいい</div>
         <div class="box2'"></div>
         <div class="box3'"></div>
         <div class="box3'"></div>
-        <div class="box3">Fashionable</div>
+        <div class="box3">オシャレ</div>
         <div class="box4'"></div>
-        <div class="box4">Limted lavel</div>
+        <div class="box4">限定ラベル</div>
         <div class="box4'"></div>
-        <div class="box5">Cool</div>
+        <a href="cool label.html">
+          <div class="box5">恰好いい</div></a>
         <div class="box5'"></div>
         <div class="box5'"></div>
         <div class="box6'"></div>
         <div class="box6'"></div>
-        <div class="box6">Traditional</div>
+        <div class="box6">伝統的</div>
     </div>
 
-    <div class="icons">
+    <!-- <div class="icons">
        <img src="img/kuraicon.svg" width="32" height="32">
-       <!-- <img src="img/saerch.svg" width="32" height="32"> -->
-       <!-- <img src="img/camera.svg" width="32" height="32"> -->
+       <img src="img/saerch.svg" width="32" height="32">
+       <img src="img/camera.svg" width="32" height="32">
        <img src="img/heart.svg" width="32" height="32">
-       <img src="img/friendsicon.svg" width="32" height="32">
-    </div>
+       <img src="img/人物の無料素材.svg" width="32" height="32">
+    </div> -->
     
   </body>
 </html>
